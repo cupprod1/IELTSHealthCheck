@@ -11,7 +11,10 @@ module.exports = {
   "test_settings" : {
     "default" : {
       "desiredCapabilities": {
-        "browserName": "chrome"
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": [ 'disable-dev-shm-usage']
+        }
       }
     }
   }
