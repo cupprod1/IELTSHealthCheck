@@ -43,13 +43,17 @@ describe('IELTS - Health Check Test', function() {
       .click(dashboardPage.elements.userProfileName)
       .click(dashboardPage.elements.logoutButton)
       .waitForElementVisible(homePage.elements.heading, config[testEnv].timeout, "Logged Out successfully")
-      .end()
   });
 
-  // after(function(browser, done) {
-  //   browser.end(function() {
-  //     done();
-  //   });
-  // });
+  after(function (browser, done) {
+    console.log("Ending After")
+    if (browser.sessionId) {
+      browser.end(function () {
+          done();
+      });
+    } else {
+      done();
+    }
+  });
 
 });
