@@ -13,7 +13,7 @@ module.exports = {
       "desiredCapabilities": {
         "browserName": "chrome",
         "chromeOptions": {
-          "args": [ 'no-sandbox', 'headless']
+          "args": [ 'disable-dev-shm-usage', 'no-sandbox', 'headless']
         }
       }
     }
