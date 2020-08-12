@@ -15,6 +15,14 @@ module.exports = {
         "chromeOptions": {
           "args": [ 'disable-dev-shm-usage', 'no-sandbox', 'headless']
         }
+      },
+
+      "test_runner" : {
+        "type" : "mocha",
+        "options" : {
+          "ui" : "bdd",
+          "reporter" : "list"
+        }
       }
     }
   }

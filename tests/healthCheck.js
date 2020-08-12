@@ -2,7 +2,7 @@ var config = require('./../config/config.js')
 
 describe('IELTS - Health Check Test', function() {
 
-  this.timeout = config.overallTimeout;
+  // this.timeout = config.overallTimeout;
   
   before(function(browser, done) {
     
