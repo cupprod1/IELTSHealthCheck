@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+  - "6.9.4"
+
+branches:
+  only:
+    - master    
+    - nemoReset_develop
+    - cambridgeone_prod_1
+
+env:
+  CUP_APP_TEST_ENVIRONMENT: $testenvcup
+  
+dist: trusty
+addons:
+  chrome: stable
+before_install:
+  - npm install -g grunt-cli
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  
+script:
+  - grunt test --testParam="institution" > output
+
+notifications:
+  email:
+    recipients:
+    - shivam.bansal@comprotechnologies.com
+	  - arun.nair@comprotechnologies.com
+	  - manish.mehta@comprotechnologies.com
+	  - piyush.mehta@comprotechnologies.com
+	  - v-rohit.kumar@comprotechnologies.com
+	  - v-shubham.shekhar@comprotechnologies.com
+	  - v-salman.malik@comprotechnologies.com
+    on_success: always
+    on_failure: always

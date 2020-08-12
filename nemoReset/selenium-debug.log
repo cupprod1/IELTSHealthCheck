@@ -1,0 +1,42 @@
+17:46:16.278 INFO - Launching a standalone Selenium Server
+Setting system property webdriver.chrome.driver to D:\CUP\ieltsHealthCheck\ieltsHealthCheck\node_modules\chromedriver\lib\chromedriver\chromedriver.exe
+17:46:16.845 INFO - Java: Oracle Corporation 25.201-b09
+17:46:16.845 INFO - OS: Windows 10 10.0 amd64
+17:46:16.877 INFO - v2.53.1, with Core v2.53.1. Built from revision a36b8b1
+17:46:17.045 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+17:46:17.045 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+17:46:17.093 INFO - Driver provider org.openqa.selenium.safari.SafariDriver registration is skipped:
+registration capabilities Capabilities [{browserName=safari, version=, platform=MAC}] does not match the current platform WIN10
+17:46:17.093 INFO - Driver class not found: org.openqa.selenium.htmlunit.HtmlUnitDriver
+17:46:17.093 INFO - Driver provider org.openqa.selenium.htmlunit.HtmlUnitDriver is not registered
+17:46:17.813 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:5554/wd/hub
+17:46:17.813 INFO - Selenium Server is up and running
+17:46:20.195 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[start-maximized]}, platform=ANY}]])
+17:46:20.227 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[start-maximized]}, platform=ANY}]
+Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 10296
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+17:46:26.035 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[start-maximized]}, platform=ANY}]]
+17:46:26.059 INFO - Executing: [get: https://micro-nemo.comprodls.com/login?ielts=true])
+17:46:29.120 INFO - Done: [get: https://micro-nemo.comprodls.com/login?ielts=true]
+17:46:29.136 INFO - Executing: [maximise window])
+17:46:31.345 INFO - Done: [maximise window]
+17:46:31.372 INFO - Executing: [find elements: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]])
+17:46:31.519 INFO - Done: [find elements: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]]
+17:46:31.519 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]]])
+17:46:31.566 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]]]
+17:46:31.574 INFO - Executing: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]])
+17:46:31.615 INFO - Done: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]]
+17:46:31.623 INFO - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]], [c, m, p, s, t, u, d, e, n, t, 2, 6, 0, 7, @, y, o, p, m, a, i, l, ., c, o, m]])
+17:46:31.839 INFO - Done: [send keys: 0 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="username"]], [c, m, p, s, t, u, d, e, n, t, 2, 6, 0, 7, @, y, o, p, m, a, i, l, ., c, o, m]]
+17:46:31.851 INFO - Executing: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="password"]])
+17:46:31.887 INFO - Done: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@name="password"]]
+17:46:31.895 INFO - Executing: [send keys: 1 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="password"]], [C, o, m, p, r, o, 1, 1]])
+17:46:32.030 INFO - Done: [send keys: 1 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@name="password"]], [C, o, m, p, r, o, 1, 1]]
+17:46:32.042 INFO - Executing: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@type="submit"]])
+17:46:32.070 INFO - Done: [find element: By.xpath: //form[contains(@id, "gigya-login-form")]//input[@type="submit"]]
+17:46:32.074 INFO - Executing: [click: 2 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@type="submit"]]])
+17:46:32.395 INFO - Done: [click: 2 [[ChromeDriver: chrome on XP (bd5805f0cc134609821a4ec1e19a43e8)] -> xpath: //form[contains(@id, "gigya-login-form")]//input[@type="submit"]]]
+17:46:32.411 INFO - Executing: [delete session: 172d8f0f-6d3c-409f-aee8-5e50dd0dc818])
+17:46:33.686 INFO - Done: [delete session: 172d8f0f-6d3c-409f-aee8-5e50dd0dc818]

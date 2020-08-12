@@ -1,5 +1,4 @@
-chromedriver.log
-package-lock.json
-debug*
 node_modules
-tests_output
+screenshots
+package-lock.json
+reports
