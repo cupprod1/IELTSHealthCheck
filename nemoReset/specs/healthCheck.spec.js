@@ -4,8 +4,8 @@ describe('IELTS - Health Check Test', function() {
   
   before(function(browser, done) {
     loginPage = browser.page['ieltsLogin.page']();
-    dashboardPage = browser.page['dashboardPage']();
-    progressPage = browser.page['progressPage']();
+    dashboardPage = browser.page['dashboard.page']();
+    progressPage = browser.page['progress.page']();
     // productLaunchPage = browser.page['productLaunchPage']();
     // homePage = browser.page['homePage']();
 
