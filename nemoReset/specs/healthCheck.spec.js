@@ -27,10 +27,10 @@ describe('IELTS - Health Check Test', function() {
     dashboardPage.clickProgressTile();
   }); 
 
-  it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
-    progressPage.clickReadingTile();
-    progressPage.clickExpandedReadingTile();
-  }); 
+  // it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
+  //   progressPage.clickReadingTile();
+  //   progressPage.clickExpandedReadingTile();
+  // }); 
 
 
     // progressPage.clickReadingTile();
