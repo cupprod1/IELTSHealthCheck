@@ -2,3 +2,4 @@ node_modules
 screenshots
 package-lock.json
 reports
+nemoReset/selenium-debug.log
