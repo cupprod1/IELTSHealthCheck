@@ -134,6 +134,7 @@ getElements: function(browser,element,callback)
     click: function(browser,element)
     {
         browser.click(element,function(result){
+            console.log(result)
             if(result.status!=0){
                 testlog.error("Element '"+element+"' could not be located on the page.");
                 throw new Error("Element '"+element+"' could not be located on the page.");
@@ -231,6 +232,7 @@ getElements: function(browser,element,callback)
     //Wait for an element to be visible
     waitForElementVisible: function(browser,element,timeout){
         browser.waitForElementVisible(element,timeout,function(result){
+            console.log(result)
             if(result.status!=0){
                 testlog.error("Element '"+element+"' could not be located on the page.");
                 throw new Error("Element '"+element+"' could not be located on the page.");
