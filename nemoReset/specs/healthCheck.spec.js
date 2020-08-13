@@ -6,8 +6,8 @@ describe('IELTS - Health Check Test', function() {
     loginPage = browser.page['ieltsLogin.page']();
     dashboardPage = browser.page['dashboardPage']();
     progressPage = browser.page['progressPage']();
-    productLaunchPage = browser.page['productLaunchPage']();
-    homePage = browser.page['homePage']();
+    // productLaunchPage = browser.page['productLaunchPage']();
+    // homePage = browser.page['homePage']();
 
     browser
       .url(config[testEnv].loginUrl, function() {
