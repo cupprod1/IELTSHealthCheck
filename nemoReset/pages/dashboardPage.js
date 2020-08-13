@@ -1,3 +1,5 @@
+var actions = require("./../lib/browserAction.js");
+
 module.exports = {
 	elements: {
 		progressTile: {
@@ -12,5 +14,15 @@ module.exports = {
 			selector: '.userProfile div.logout'
 		}
 
-	}
+	},
+
+	commands: [
+        {
+            clickProgressTile: function(){
+                this.api.useCss();
+                actions.waitForElementVisible(this,this.elements.username.progressTile,30000);
+                actions.click(this,this.elements.progressTile.selector);
+            }
+        }
+    ]
 }

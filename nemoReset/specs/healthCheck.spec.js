@@ -1,17 +1,14 @@
 var config = require('./../config/config.js')
 var testEnv = "thor"
 describe('IELTS - Health Check Test', function() {
-
-  // this.timeout = config.overallTimeout;
   
   before(function(browser, done) {
     loginPage = browser.page['ieltsLogin.page']();
-    // dashboardPage = browser.page.dashboardPage();
-    // progressPage = browser.page.progressPage();
-    // productLaunchPage = browser.page.productLaunchPage();
-    // homePage = browser.page.homePage();
+    dashboardPage = browser.page['dashboardPage']();
+    progressPage = browser.page['progressPage']();
+    productLaunchPage = browser.page['productLaunchPage']();
+    homePage = browser.page['homePage']();
 
-    // console.log(loginPage.elements.username.selector)
     browser
       .url(config[testEnv].loginUrl, function() {
         console.log("Launching URL: " + config[testEnv].loginUrl)
@@ -21,16 +18,24 @@ describe('IELTS - Health Check Test', function() {
       });
   });
 
-  it('Verify Assignment Launch', function(browser) {
-    console.log("Entering it");
+  it('Step 1: Login Page', function(browser) {
     loginPage.waitForUsernameToAppear();  
     loginPage.login();
-    // dashboardPage.clickProgressTile();
+  });
+   
+  it('Step 2: Dashboard Page (Checking visibility of Progress Tile)', function(browser) {
+    dashboardPage.clickProgressTile();
+  }); 
+
+  it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
+    progressPage.clickReadingTile();
+    progressPage.clickExpandedReadingTile();
+  }); 
+
+
     // progressPage.clickReadingTile();
 
     // browser
-    //   .waitForElementVisible(dashboardPage.elements.progressTile, config[testEnv].timeout, "Step 2: Dashboard Page (Checking visibility of Progress Tile)")
-    //   .click(dashboardPage.elements.progressTile)
     //   .waitForElementVisible(progressPage.elements.readingTile, config[testEnv].timeout, 'Step 3: Progress Page (Checking visibility of Reading Tile)')
     //   .click(progressPage.elements.readingTile)
     //   .waitForElementVisible(progressPage.elements.readingTest, config[testEnv].timeout, "Checking Reading Tile is expanded")
@@ -45,7 +50,6 @@ describe('IELTS - Health Check Test', function() {
     //   .click(dashboardPage.elements.userProfileName)
     //   .click(dashboardPage.elements.logoutButton)
     //   .waitForElementVisible(homePage.elements.heading, config[testEnv].timeout, "Logged Out successfully")
-  });
 
   after(function (browser, done) {
     console.log("Ending After")
