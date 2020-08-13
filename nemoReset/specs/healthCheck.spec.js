@@ -24,16 +24,12 @@ describe('IELTS - Health Check Test', function() {
   });
    
   it('Step 2: Dashboard Page (Checking visibility of Progress Tile)', function(browser) {
-    browser.pause(20000, function() {
-      dashboardPage.clickProgressTile();
-    });
+    dashboardPage.clickProgressTile();
   }); 
 
   it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
-    browser.pause(20000, function() {
-      progressPage.clickReadingTile();
-      progressPage.clickExpandedReadingTile();
-    });
+    progressPage.clickReadingTile();
+    progressPage.clickExpandedReadingTile();
   }); 
 
 
