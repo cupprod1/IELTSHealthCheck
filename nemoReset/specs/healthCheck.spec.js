@@ -6,7 +6,7 @@ describe('IELTS - Health Check Test', function() {
     loginPage = browser.page['ieltsLogin.page']();
     dashboardPage = browser.page['dashboard.page']();
     progressPage = browser.page['progress.page']();
-    // productLaunchPage = browser.page['productLaunchPage']();
+    productLaunchPage = browser.page['productLaunch.page']();
     // homePage = browser.page['homePage']();
 
     browser
@@ -29,20 +29,27 @@ describe('IELTS - Health Check Test', function() {
 
   it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
     progressPage.clickReadingTile();
-    progressPage.clickExpandedReadingTile();
+    progressPage.clickReadingTest();
   }); 
 
+  it('Step 4: Launch IETLS Test Page (Checking Container is painted)', function(browser) {
+    productLaunchPage.validateTestContainerLaunch();
+  });
 
-    // progressPage.clickReadingTile();
+  it('Step 5: Validating Metrica Frame & Test Content', function(browser) {
+    productLaunchPage.validateAnswerOption2();
+  });
 
+  it('Step 6: Metrica Score Progress Layer', function(browser) {
+    productLaunchPage.validateScoreProgress();
+  });
+
+  it('Step 7: Logout', function(browser) {
+    dashboardPage.logout();
+  });  
+
+    // productLaunchPage.clickReadingTest();
     // browser
-    //   .waitForElementVisible(progressPage.elements.readingTile, config[testEnv].timeout, 'Step 3: Progress Page (Checking visibility of Reading Tile)')
-    //   .click(progressPage.elements.readingTile)
-    //   .waitForElementVisible(progressPage.elements.readingTest, config[testEnv].timeout, "Checking Reading Tile is expanded")
-    //   .click(progressPage.elements.readingTest)
-    //   .waitForElementVisible(productLaunchPage.elements.testContainer, config[testEnv].timeout, 'Step 4: Launch IETLS Test Page (Checking Container is painted)')
-    //   .frame(0)
-    //   .waitForElementVisible(productLaunchPage.elements.answerOption2, config[testEnv].timeout, "Step 5: Validating Metrica Frame & Test Content")
     //   .waitForElementVisible(productLaunchPage.elements.currentQuestionCount, config[testEnv].timeout, "Step 6: Metrica Score Progress Layer")
     //   .assert.containsText(productLaunchPage.elements.currentQuestionCount, config[testEnv].student.currentQuestionCount, "Checking Current Score is matching")
     //   .assert.containsText(productLaunchPage.elements.totalQuestionCount, config[testEnv].student.totalQuestionCount, "Checking Total Score is matching")

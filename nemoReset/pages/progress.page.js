@@ -22,7 +22,7 @@ module.exports = {
                 this.api.useCss();
             },
 
-			clickExpandedReadingTile: function(){
+			clickReadingTest: function(){
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.readingTest.selector,30000);
                 actions.click(this,this.elements.readingTest.selector);
