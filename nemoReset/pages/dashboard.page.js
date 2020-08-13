@@ -20,7 +20,7 @@ module.exports = {
         {
             clickProgressTile: function(){
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.progressTile.selector,30000);
+                // actions.waitForElementVisible(this,this.elements.progressTile.selector,30000);
                 actions.click(this,this.elements.progressTile.selector);
             }
         }
