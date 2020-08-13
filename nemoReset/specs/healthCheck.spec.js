@@ -42,6 +42,11 @@ describe('IELTS - Health Check Test', function() {
 
   it('Step 6: Metrica Score Progress Layer', function(browser) {
     productLaunchPage.validateScoreProgress();
+    browser
+      .frame(0)
+      .assert.containsText(productLaunchPage.elements.currentQuestionCount.selector, config[testEnv].student.currentQuestionCount, "Checking Current Score is matching")
+      .assert.containsText(productLaunchPage.elements.totalQuestionCount.selector, config[testEnv].student.totalQuestionCount, "Checking Total Score is matching")
+      .frameParent()
   });
 
   it('Step 7: Logout', function(browser) {
@@ -59,7 +64,6 @@ describe('IELTS - Health Check Test', function() {
     //   .waitForElementVisible(homePage.elements.heading, config[testEnv].timeout, "Logged Out successfully")
 
   after(function (browser, done) {
-    console.log("Ending After")
     if (browser.sessionId) {
       browser.end(function () {
           done();
