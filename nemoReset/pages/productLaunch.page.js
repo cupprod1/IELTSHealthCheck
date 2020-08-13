@@ -30,18 +30,18 @@ module.exports = {
             },
 
             validateAnswerOption2: function(){
-                this.frame(0)
+                this.api.frame(0)
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.answerOption2.selector,30000);
                 this.api.useCss();
-                this.frameParent();
+                this.api.frameParent();
             },
 
             validateScoreProgress: function(){
-                this.frame(0)
+                this.api.frame(0)
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,30000);
-            	this.frameParent();
+            	this.api.frameParent();
             }
         }
     ]
