@@ -7,7 +7,7 @@ describe('IELTS - Health Check Test', function() {
     dashboardPage = browser.page['dashboard.page']();
     progressPage = browser.page['progress.page']();
     productLaunchPage = browser.page['productLaunch.page']();
-    // homePage = browser.page['homePage']();
+    homePage = browser.page['home.page']();
 
     browser
       .url(config[testEnv].loginUrl, function() {
@@ -51,6 +51,7 @@ describe('IELTS - Health Check Test', function() {
 
   it('Step 7: Logout', function(browser) {
     dashboardPage.logout();
+    browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Logged Out successfully")
   });  
 
     // productLaunchPage.clickReadingTest();
@@ -61,7 +62,6 @@ describe('IELTS - Health Check Test', function() {
     //   .frameParent()
     //   .click(dashboardPage.elements.userProfileName)
     //   .click(dashboardPage.elements.logoutButton)
-    //   .waitForElementVisible(homePage.elements.heading, config[testEnv].timeout, "Logged Out successfully")
 
   after(function (browser, done) {
     if (browser.sessionId) {
