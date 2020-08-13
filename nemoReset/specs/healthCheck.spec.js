@@ -29,10 +29,12 @@ describe('IELTS - Health Check Test', function() {
     });
   }); 
 
-  // it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
-  //   progressPage.clickReadingTile();
-  //   progressPage.clickExpandedReadingTile();
-  // }); 
+  it('Step 3: Progress Page (Checking visibility of Reading Tile)', function(browser) {
+    browser.pause(20000, function() {
+      progressPage.clickReadingTile();
+      progressPage.clickExpandedReadingTile();
+    });
+  }); 
 
 
     // progressPage.clickReadingTile();
