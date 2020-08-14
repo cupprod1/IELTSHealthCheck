@@ -21,7 +21,6 @@ module.exports = function (grunt) {
                 custom_commands_path : "",
                 src_folders : ['./nemoReset/specs/basicTest.spec.js'], // Update the path based on your application
                 page_objects_path : './nemoReset/pages/',   // path where page object files will be loaded from. Update the path based on your application
-                globals_path : './nemoReset/config/index.js', // path of an external globals module which will be loaded and made available to the test as a property globals on the main client instance. Update the path based on your application
                 test_runner : {
                     type : 'mocha',
                     options : {
@@ -234,6 +233,11 @@ module.exports = function (grunt) {
     grunt.registerTask('test', 'Runs e2e tests', function() {
         var testParam = grunt.option('testParam');
         grunt.task.run('nightwatch:' + testParam)
+        if(grunt.option('testEnv')) {
+            global.testEnv = grunt.option('testEnv')
+        } else {
+            global.testEnv = "thor"
+        }
     });
 
 };

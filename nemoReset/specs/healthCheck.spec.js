@@ -1,5 +1,5 @@
 var config = require('./../config/config.js')
-var testEnv = "thor"
+
 describe('IELTS - Health Check Test', function() {
   
   before(function(browser, done) {
@@ -49,19 +49,10 @@ describe('IELTS - Health Check Test', function() {
       .frameParent()
   });
 
-  it('Step 7: Logout', function(browser) {
+  it('Step 7: Logout (Checking visibility of Home Page', function(browser) {
     dashboardPage.logout();
     browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Logged Out successfully")
   });  
-
-    // productLaunchPage.clickReadingTest();
-    // browser
-    //   .waitForElementVisible(productLaunchPage.elements.currentQuestionCount, config[testEnv].timeout, "Step 6: Metrica Score Progress Layer")
-    //   .assert.containsText(productLaunchPage.elements.currentQuestionCount, config[testEnv].student.currentQuestionCount, "Checking Current Score is matching")
-    //   .assert.containsText(productLaunchPage.elements.totalQuestionCount, config[testEnv].student.totalQuestionCount, "Checking Total Score is matching")
-    //   .frameParent()
-    //   .click(dashboardPage.elements.userProfileName)
-    //   .click(dashboardPage.elements.logoutButton)
 
   after(function (browser, done) {
     if (browser.sessionId) {
