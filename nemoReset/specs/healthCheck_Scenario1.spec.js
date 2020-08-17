@@ -1,6 +1,6 @@
 var config = require('./../config/config.js')
 
-describe('IELTS - Health Check Test', function() {
+describe('IELTS - Health Check Test - Scenario 1 - Launch In Progress Assignment', function() {
   
   before(function(browser, done) {
     loginPage = browser.page['ieltsLogin.page']();
@@ -20,7 +20,7 @@ describe('IELTS - Health Check Test', function() {
 
   it('Step 1: Login Page', function(browser) {
     loginPage.waitForUsernameToAppear();  
-    loginPage.login();
+    loginPage.login(config[testEnv].student.email, config[testEnv].student.password);
   });
    
   it('Step 2: Dashboard Page (Checking visibility of Progress Tile)', function(browser) {

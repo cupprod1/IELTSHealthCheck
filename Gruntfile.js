@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                         smokeTest: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
                         end_session_on_fail: false,
-                        src_folders : ['./nemoReset/specs/healthCheck.spec.js'], // Update the path based on your application
+                        src_folders : ['./nemoReset/specs'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
                             on_failure : false,

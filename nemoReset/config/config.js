@@ -10,8 +10,13 @@ module.exports = {
             "currentQuestionCount": "1",
             "totalQuestionCount": "5"
         },
+
+        "student_scenario2": {
+            "email":"cmp_student11@yopmail.com",
+            "password":"Compro11"
+        },
         // Page Completion Timeout
-        "timeout": 30000
+        "timeout": 60000
     },
     // Overall Time out for Test Completion
     "overallTimeout": 300000

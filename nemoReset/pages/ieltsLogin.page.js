@@ -25,10 +25,10 @@ module.exports = {
                 actions.waitForElementVisible(this,this.elements.username.selector,60000);
                 this.api.useCss();
             },
-            login: function(){
+            login: function(email, password){
                 this.api.useXpath();
-                actions.setValue(this,this.elements.username.selector,"cmpstudent2607@yopmail.com");
-                actions.setValue(this,this.elements.password.selector,"Compro11");
+                actions.setValue(this,this.elements.username.selector, email);
+                actions.setValue(this,this.elements.password.selector, password);
                 actions.click(this,this.elements.submitButton.selector);
                 this.api.useCss();
             }

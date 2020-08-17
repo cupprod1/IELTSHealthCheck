@@ -18,7 +18,15 @@ module.exports = {
 
 		totalQuestionCount: {
 			selector: '.jetpack-progress .total'
-		}
+		},
+
+        paymentOverlay: {
+            selector: '.payment-overlay'
+        },
+
+        crossIconOnFirst: {
+            selector: '.question-band a.question-serial-number-parent:nth-child(2) i.incorrect-answer'
+        }
 	},
 
 	commands: [
@@ -42,6 +50,16 @@ module.exports = {
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,60000);
             	this.api.frameParent();
+            },
+
+            validatePaymentOverlay: function() {
+                this.api.useCss();
+                actions.waitForElementVisible(this,this.elements.paymentOverlay.selector,60000);
+            },
+
+            validateCrossIcon: function() {
+                this.api.useCss();
+                actions.waitForElementVisible(this,this.elements.crossIconOnFirst.selector,60000);  
             }
         }
     ]
