@@ -20,16 +20,16 @@ module.exports = {
         {
             clickProgressTile: function(){
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.progressTile.selector,30000);
+                actions.waitForElementVisible(this,this.elements.progressTile.selector,60000);
                 actions.click(this,this.elements.progressTile.selector);
             },
 
 			logout: function(){
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.userProfileName.selector,30000);
+                actions.waitForElementVisible(this,this.elements.userProfileName.selector,60000);
                 actions.click(this,this.elements.userProfileName.selector);
                 actions.click(this,this.elements.logoutButton.selector);
-                actions.waitForElementVisible(this,this.elements.userProfileName.selector,30000);
+                actions.waitForElementVisible(this,this.elements.userProfileName.selector,60000);
             }            
         }
     ]

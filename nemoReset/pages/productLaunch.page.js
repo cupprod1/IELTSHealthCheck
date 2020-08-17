@@ -25,14 +25,14 @@ module.exports = {
         {
             validateTestContainerLaunch: function(){
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.testContainer.selector,30000);
+                actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
                 this.api.useCss();
             },
 
             validateAnswerOption2: function(){
                 this.api.frame(0)
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.answerOption2.selector,30000);
+                actions.waitForElementVisible(this,this.elements.answerOption2.selector,60000);
                 this.api.useCss();
                 this.api.frameParent();
             },
@@ -40,7 +40,7 @@ module.exports = {
             validateScoreProgress: function(){
                 this.api.frame(0)
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,30000);
+                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,60000);
             	this.api.frameParent();
             }
         }

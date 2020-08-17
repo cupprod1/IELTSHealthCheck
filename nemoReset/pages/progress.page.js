@@ -17,14 +17,14 @@ module.exports = {
         {
             clickReadingTile: function(){
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.readingTile.selector,30000);
+                actions.waitForElementVisible(this,this.elements.readingTile.selector,60000);
                 actions.click(this,this.elements.readingTile.selector);
                 this.api.useCss();
             },
 
 			clickReadingTest: function(){
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.readingTest.selector,30000);
+                actions.waitForElementVisible(this,this.elements.readingTest.selector,60000);
                 actions.click(this,this.elements.readingTest.selector);
                 this.api.useCss();
             }            

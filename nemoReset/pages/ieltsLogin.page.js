@@ -22,7 +22,7 @@ module.exports = {
         {
             waitForUsernameToAppear: function(){
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.username.selector,30000);
+                actions.waitForElementVisible(this,this.elements.username.selector,60000);
                 this.api.useCss();
             },
             login: function(){
