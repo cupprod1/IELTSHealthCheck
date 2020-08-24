@@ -36,8 +36,17 @@ describe('IELTS - Health Check Test - Scenario 1 - Launch In Progress Assignment
     productLaunchPage.validateTestContainerLaunch();
   });
 
-  it('Step 5: Validating Metrica Frame & Test Content', function(browser) {
-    productLaunchPage.validateAnswerOption2();
+  it('Step 5: Validating Metrica Frame is visible', function(browser) {
+    productLaunchPage.waitForAnswerOptionsToAppear();
+  });
+
+  it('Step 6: Validating Metrica Frame Content is correct', function(browser) {
+    browser
+      .frame(0)
+      .useXpath()
+      .assert.containsText(productLaunchPage.elements.answerOption2.selector, config[testEnv].student.answer2Text, "Checking Answer Option 2 Text is matching")
+      .useCss()
+      .frameParent()
   });
 
   it('Step 6: Metrica Score Progress Layer', function(browser) {

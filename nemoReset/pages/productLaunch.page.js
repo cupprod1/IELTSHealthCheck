@@ -8,7 +8,7 @@ module.exports = {
 		},
 
 		answerOption2: {
-			selector: '//div[contains(text(), "Industrialisation: Developing modern cities")]',
+			selector: '//*[contains(@class, "simple-choice")][2]',
 			locateStrategy: 'xpath'
 		},
 
@@ -37,7 +37,7 @@ module.exports = {
                 this.api.useCss();
             },
 
-            validateAnswerOption2: function(){
+            waitForAnswerOptionsToAppear: function(){
                 this.api.frame(0)
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.answerOption2.selector,60000);
