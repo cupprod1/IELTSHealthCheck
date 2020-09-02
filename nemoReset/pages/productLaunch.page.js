@@ -26,6 +26,10 @@ module.exports = {
 
         crossIconOnFirst: {
             selector: '.question-band a.question-serial-number-parent:nth-child(2) i.incorrect-answer'
+        },
+
+        paymentButton: {
+            selector: 'a.payment-button'
         }
 	},
 
@@ -60,6 +64,12 @@ module.exports = {
             validateCrossIcon: function() {
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.crossIconOnFirst.selector,60000);  
+            },
+
+            clickPaymentButton: function() {
+                this.api.useCss();
+                actions.waitForElementVisible(this,this.elements.paymentButton.selector,60000);
+                actions.click(this,this.elements.paymentButton.selector)
             }
         }
     ]

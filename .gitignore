@@ -3,3 +3,4 @@ screenshots
 package-lock.json
 reports
 nemoReset/selenium-debug.log
+debug.log
