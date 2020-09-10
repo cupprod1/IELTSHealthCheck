@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                         smokeTest: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
                         end_session_on_fail: false,
-                        src_folders : ['./nemoReset/specs'], // Update the path based on your application
+                        src_folders : ['./nemoReset/specs/healthChecks/healthCheck_Scenario1.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
                             on_failure : false,
@@ -128,6 +128,52 @@ module.exports = function (grunt) {
                           //  'webdriver.chrome.driver' : 'node_modules/chromedriver/lib/chromedriver/chromedriver.exe'
                           'webdriver.chrome.driver': chromedriver.path
                         }},
+
+                        smokeTestAll: {selenium_host : '127.0.0.1',
+                        selenium_port : 5554,
+                        end_session_on_fail: false,
+                        src_folders : ['./nemoReset/specs/healthChecks'], // Update the path based on your application
+                        screenshots : {
+                            enabled : true,
+                            on_failure : false,
+                            path : 'screenshots'
+                        },
+                        desiredCapabilities : {  // specify browser name along with other capabilities
+                            browserName : 'chrome',
+                            javascriptEnabled : true,
+                            acceptSslCerts : true,
+                            'chromeOptions' : {
+                                 //"args" : ['headless']
+                                "args" : ['start-maximized', 'headless', 'no-sandbox', 'disable-dev-shm-usage']                                
+                            }},
+                        cli_args : {
+                          //  'webdriver.chrome.driver' : 'node_modules/chromedriver/lib/chromedriver/chromedriver.exe'
+                          'webdriver.chrome.driver': chromedriver.path
+                        }},
+
+                        setupData: {selenium_host : '127.0.0.1',
+                        selenium_port : 5554,
+                        end_session_on_fail: false,
+                        src_folders : ['./nemoReset/specs/setupData/setupData.spec.js'], // Update the path based on your application
+                        screenshots : {
+                            enabled : true,
+                            on_failure : false,
+                            path : 'screenshots'
+                        },
+                        desiredCapabilities : {  // specify browser name along with other capabilities
+                            browserName : 'chrome',
+                            javascriptEnabled : true,
+                            acceptSslCerts : true,
+                            'chromeOptions' : {
+                                 //"args" : ['headless']
+                                "args" : ['start-maximized', 'headless', 'no-sandbox', 'disable-dev-shm-usage']                                
+                            }},
+                        cli_args : {
+                          //  'webdriver.chrome.driver' : 'node_modules/chromedriver/lib/chromedriver/chromedriver.exe'
+                          'webdriver.chrome.driver': chromedriver.path
+                        }},
+
+
                         smokeTest2: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
                         end_session_on_fail: false,
@@ -237,6 +283,12 @@ module.exports = function (grunt) {
             global.testEnv = grunt.option('testEnv')
         } else {
             global.testEnv = "thor"
+        }
+
+        if(grunt.option('count')) {
+            global.count = grunt.option('count')
+        } else {
+            global.count = 1
         }
     });
 

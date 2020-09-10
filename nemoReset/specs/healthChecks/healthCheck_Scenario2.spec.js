@@ -1,4 +1,4 @@
-var config = require('./../config/config.js')
+var config = require('./../../config/config.js')
 
 describe('IELTS - Health Check Test', function() {
   
@@ -19,18 +19,23 @@ describe('IELTS - Health Check Test', function() {
       });
   });
 
-  it('Scenario 2 - Launch Submitted Assignment', function(browser) {
+  it('Scenario 2 - Student launches an already submitted assignment and go to billing page to confirm integration with KonaKart', function(browser) {
     loginPage.waitForUsernameToAppear();  
     loginPage.login(config[testEnv].student_scenario2.email, config[testEnv].student_scenario2.password);
     dashboardPage.clickProgressTile();
     progressPage.clickReadingTile();
     progressPage.clickReadingTest();
     productLaunchPage.validatePaymentOverlay();
-    productLaunchPage.validateCrossIcon();
+    productLaunchPage.validateStatusIcon();
     productLaunchPage.clickPaymentButton();
     billingInfoPage.validateBillingInfo();
-    dashboardPage.logout();
-    browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Logged Out successfully")
+    billingInfoPage.completeBillingForm();
+    billingInfoPage.clickPaymentButtonStep2();
+    if(testEnv != "thor" && testEnv != "qa") {
+      billingInfoPage.validateCheckoutPage();
+      billingInfoPage.cancelPayment();
+      productLaunchPage.validatePaymentOverlay();
+    }
   });
 
   after(function (browser, done) {

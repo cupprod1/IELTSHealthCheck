@@ -1,6 +1,7 @@
 module.exports = {
     "thor": {
         "loginUrl":"https://micro-nemo.comprodls.com/login?ielts=true",
+        "registerUrl": "https://micro-nemo.comprodls.com/register-learner?ielts=true",
         "teacher": {
 
         },
@@ -22,6 +23,7 @@ module.exports = {
 
     "qa": {
         "loginUrl":"https://qa.cambridgeone.org/login?ielts=true",
+        "registerUrl": "https://qa.cambridgeone.org/register-learner?ielts=true",
         "teacher": {
 
         },
@@ -43,6 +45,7 @@ module.exports = {
 
     "release": {
         "loginUrl":"https://release.cambridgeone.org/login?ielts=true",
+        "registerUrl": "https://release.cambridgeone.org/register-learner?ielts=true",
         "teacher": {
 
         },
@@ -55,7 +58,12 @@ module.exports = {
         },
 
         "student_scenario2": {
-            "email":"cmp_scenario2_1@yopmail.com",
+            "email":"cmp_scenario2_2@yopmail.com",
+            "password":"Compro11"
+        },
+
+        "student_scenario3": {
+            "email":"cmp_scenario2@yopmail.com",
             "password":"Compro11"
         },
         // Page Completion Timeout

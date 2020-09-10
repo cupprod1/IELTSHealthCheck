@@ -1,4 +1,4 @@
-var config = require('./../config/config.js')
+var config = require('./../../config/config.js')
 
 describe('IELTS - Health Check Test', function() {
   
@@ -18,21 +18,13 @@ describe('IELTS - Health Check Test', function() {
       });
   });
 
-  it('Scenario 1 - Launch In Progress Assignment', function(browser) {
+  it('Scenario 1 - Student launches an incomplete IELTS assignment, checks for Metrica content and logs out', function(browser) {
     loginPage.waitForUsernameToAppear();  
     loginPage.login(config[testEnv].student.email, config[testEnv].student.password);
     dashboardPage.clickProgressTile();
     progressPage.clickReadingTile();
     progressPage.clickReadingTest();
-    productLaunchPage.validateTestContainerLaunch();
-    productLaunchPage.waitForAnswerOptionsToAppear();
-    browser
-      .frame(0)
-      .useXpath()
-      .assert.containsText(productLaunchPage.elements.answerOption2.selector, config[testEnv].student.answer2Text, "Checking Answer Option 2 Text is matching")
-      .useCss()
-      .frameParent()
-    productLaunchPage.validateScoreProgress();
+    productLaunchPage.validateMetricaFrameToAppear();
     dashboardPage.logout();
     browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Logged Out successfully")
   });
