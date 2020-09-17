@@ -71,21 +71,22 @@ module.exports = {
     },
 
     "prod": {
-        "loginUrl":"https://micro-nemo.comprodls.com/login?ielts=true",
+        "loginUrl":"https://www.cambridgeone.org/login?ielts=true",
+        "registerUrl": "https://www.cambridgeone.org/register-learner?ielts=true",
         "teacher": {
 
         },
         "student": {
-            "email":"cmp_test1@yopmail.com",
-            "password":"Compro11",
+            "email":"cmp_ieltstest1@yopmail.com",
+            "password":"Compro15",
             "currentQuestionCount": "1",
-            "totalQuestionCount": "5",
+            "totalQuestionCount": "16",
             "answer2Text": "Industrialisation: Bringing luxury to the poor"
         },
 
         "student_scenario2": {
-            "email":"cmp_student11@yopmail.com",
-            "password":"Compro11"
+            "email":"cmp_ieltstest2@yopmail.com",
+            "password":"Compro15"
         },
         // Page Completion Timeout
         "timeout": 60000
