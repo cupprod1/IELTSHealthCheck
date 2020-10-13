@@ -151,10 +151,10 @@ module.exports = function (grunt) {
                           'webdriver.chrome.driver': chromedriver.path
                         }},
 
-                        smokeTestAll: {selenium_host : '127.0.0.1',
+                        smokeTest_scenario3: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
                         end_session_on_fail: false,
-                        src_folders : ['./nemoReset/specs/healthChecks'], // Update the path based on your application
+                        src_folders : ['./nemoReset/specs/healthChecks/healthCheck_Scenario3.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
                             on_failure : false,
