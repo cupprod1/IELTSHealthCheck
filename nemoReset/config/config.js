@@ -85,7 +85,7 @@ module.exports = {
         },
 
         "student_scenario2": {
-            "email":"ieltsuser_s2@yopmail.com",
+            "email":"learner_1601272783721@yopmail.com",
             "password":"Compro11"
         },
         // Page Completion Timeout
