@@ -85,8 +85,8 @@ module.exports = {
         },
 
         "student_scenario2": {
-            "email":"cmp_ieltstest2@yopmail.com",
-            "password":"Compro15"
+            "email":"ieltsuser_s2@yopmail.com",
+            "password":"Compro11"
         },
         // Page Completion Timeout
         "timeout": 60000
