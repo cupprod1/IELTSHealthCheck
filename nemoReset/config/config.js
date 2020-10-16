@@ -77,7 +77,7 @@ module.exports = {
 
         },
         "student": {
-            "email":"cmp_ieltstest1@yopmail.com",
+            "email":"cmp_ieltstest111@yopmail.com",
             "password":"Compro15",
             "currentQuestionCount": "1",
             "totalQuestionCount": "16",
