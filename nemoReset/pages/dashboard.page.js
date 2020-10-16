@@ -1,4 +1,5 @@
 var actions = require("./../lib/browserAction.js");
+require("./../lib/logging.js");
 
 module.exports = {
 	elements: {
@@ -42,12 +43,18 @@ module.exports = {
 	commands: [
         {
             clickProgressTile: function(){
+                this.api.perform(function() {
+                    testlog.info("Clicking Progress Tile")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.progressTile.selector,60000);
                 actions.click(this,this.elements.progressTile.selector);
             },
 
 			logout: function(){
+                this.api.perform(function() {
+                    testlog.info("Performing Logout operation")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.userProfileName.selector,60000);
                 actions.click(this,this.elements.userProfileName.selector);
@@ -56,6 +63,9 @@ module.exports = {
             },
 
             chooseSkillBand: function() {
+                this.api.perform(function() {
+                    testlog.info("Choosing Skill Band")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.skillBandContainer.selector,60000);
                 actions.click(this,this.elements.skillDropdown.selector);

@@ -1,4 +1,5 @@
 var actions = require("./../lib/browserAction.js");
+require("./../lib/logging.js");
 
 module.exports = {
 	elements: {
@@ -63,12 +64,18 @@ module.exports = {
 	commands: [
         {
             validateTestContainerLaunch: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating Product Test Container is launched")
+                })
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
                 this.api.useCss();
             },
 
             validateMetricaFrameToAppear: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating Metrica Frame is appeared or not")
+                })
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
                 this.api.frame(0)
@@ -80,6 +87,9 @@ module.exports = {
             },
 
             validateScoreProgress: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating score progress")
+                })
                 this.api.frame(0)
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,60000);
@@ -87,22 +97,34 @@ module.exports = {
             },
 
             validatePaymentOverlay: function() {
+                this.api.perform(function() {
+                    testlog.info("Validating Payment Overlay is present or not")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.paymentOverlay.selector,60000);
             },
 
             validateStatusIcon: function() {
+                this.api.perform(function() {
+                    testlog.info("Validating Status icon is present or not")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.questionStatusIcon.selector,60000);  
             },
 
             clickPaymentButton: function() {
+                this.api.perform(function() {
+                    testlog.info("Clicking Payment button")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.paymentButton.selector,60000);
                 actions.click(this,this.elements.paymentButton.selector)
             },
 
             moveToLastQuestion: function() {
+                this.api.perform(function() {
+                    testlog.info("Moving to Last assignment question")
+                })
                 this.api.useCss();
                 this.api.frame(0)
                 actions.waitForElementVisible(this,this.elements.allQuestions.selector,60000)
@@ -113,6 +135,9 @@ module.exports = {
             },
 
             submitAssignment: function() {
+                this.api.perform(function() {
+                    testlog.info("Submitting the assignment")
+                })
                 this.api.useXpath();
                 this.api.frame(0)
                 actions.waitForElementVisible(this,this.elements.submitButton.selector,60000)

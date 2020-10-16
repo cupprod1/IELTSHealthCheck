@@ -1,4 +1,5 @@
 var actions = require("./../lib/browserAction.js");
+require("./../lib/logging.js");
 
 module.exports = {
 	elements: {
@@ -56,11 +57,17 @@ module.exports = {
 	commands: [
         {
             validateBillingInfo: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating Billing Info page is loaded successfully")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.billingInfoWrapper.selector,60000);
             },
 
             completeBillingForm: function(){
+                this.api.perform(function() {
+                    testlog.info("Entering Billing Info Details")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.billingInfoWrapper.selector,60000);
                 actions.clearValue(this,this.elements.country.selector);
@@ -85,7 +92,7 @@ module.exports = {
                 // this.api.moveToElement(this.elements.termsLinkCheckbox.selector, 5, 5)
                 // this.api.mouseButtonClick(0)
                 // actions.isElementPresent(this,'div.terms-not-accepted'), function(result) {
-                //     console.log("result" + result)
+                //     testlog.info("result" + result)
                 //     if(result) {
                 //         actions.waitForElementVisible(this,this.elements.termsLinkCheckbox.selector,60000);
                 //         this.api.moveToElement(this.elements.termsLinkCheckbox.selector, 5, 5)
@@ -95,16 +102,25 @@ module.exports = {
             },
 
             clickPaymentButtonStep2: function() { 
+                this.api.perform(function() {
+                    testlog.info("Clicking Payment Button Step 2")
+                })
                 // actions.click(this,this.elements.termsLinkCheckbox.selector);
                 actions.click(this,this.elements.continuePaymentButton.selector);
             },
 
             validateCheckoutPage: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating that the Checkout Page is loaded successfully or not")
+                })
                 this.api.useCss();
                 actions.waitForElementVisible(this,this.elements.cardType.selector,60000);
             },
 
             cancelPayment: function(){
+                this.api.perform(function() {
+                    testlog.info("Clicking on Cancel Payment button")
+                })
                 this.api.useXpath();
                 actions.waitForElementVisible(this,this.elements.cancelButton.selector,60000);
                 actions.click(this,this.elements.cancelButton.selector);
