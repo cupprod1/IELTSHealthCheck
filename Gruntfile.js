@@ -19,7 +19,7 @@ module.exports = function (grunt) {
                 jar_path: 'node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.53.1.jar',
                 config_path: './nemoReset/nightwatch.conf.js', // Update the path based on your application
                 custom_commands_path : "",
-                src_folders : ['./nemoReset/specs/basicTest.spec.js'], // Update the path based on your application
+                src_folders : ['./nemoReset/specs'], // Update the path based on your application
                 page_objects_path : './nemoReset/pages/',   // path where page object files will be loaded from. Update the path based on your application
                 test_runner : {
                     type : 'mocha',
@@ -34,11 +34,12 @@ module.exports = function (grunt) {
                 test_settings : {
                     chrome: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
-                        end_session_on_fail: false,
+                        end_session_on_fail: true,
                         screenshots : {
                             enabled : true,
-                            on_failure : false,
-                            path : 'screenshots'
+                            on_failure : true,
+                            on_error : true,
+                            path : './screenshots'
                         },
 
                         desiredCapabilities : {       // specify browser name along with other capabilities
@@ -109,12 +110,13 @@ module.exports = function (grunt) {
                         }},
                         smokeTest: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
-                        end_session_on_fail: false,
+                        end_session_on_fail: true,
                         src_folders : ['./nemoReset/specs/healthChecks/healthCheck_Scenario1.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
-                            on_failure : false,
-                            path : 'screenshots'
+                            on_failure : true,
+                            on_error : true,
+                            path : './screenshots'
                         },
                         desiredCapabilities : {  // specify browser name along with other capabilities
                             browserName : 'chrome',
@@ -131,12 +133,13 @@ module.exports = function (grunt) {
 
                         smokeTest_scenario2: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
-                        end_session_on_fail: false,
+                        end_session_on_fail: true,
                         src_folders : ['./nemoReset/specs/healthChecks/healthCheck_Scenario2.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
-                            on_failure : false,
-                            path : 'screenshots'
+                            on_failure : true,
+                            on_error : true,
+                            path : './screenshots'
                         },
                         desiredCapabilities : {  // specify browser name along with other capabilities
                             browserName : 'chrome',
@@ -153,12 +156,13 @@ module.exports = function (grunt) {
 
                         smokeTest_scenario3: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
-                        end_session_on_fail: false,
+                        end_session_on_fail: true,
                         src_folders : ['./nemoReset/specs/healthChecks/healthCheck_Scenario3.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
-                            on_failure : false,
-                            path : 'screenshots'
+                            on_failure : true,
+                            on_error : true,
+                            path : './screenshots'
                         },
                         desiredCapabilities : {  // specify browser name along with other capabilities
                             browserName : 'chrome',
@@ -175,12 +179,13 @@ module.exports = function (grunt) {
 
                         setupData: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
-                        end_session_on_fail: false,
+                        end_session_on_fail: true,
                         src_folders : ['./nemoReset/specs/setupData/setupData.spec.js'], // Update the path based on your application
                         screenshots : {
                             enabled : true,
-                            on_failure : false,
-                            path : 'screenshots'
+                            on_failure : true,
+                            on_error : true,
+                            path : './screenshots'
                         },
                         desiredCapabilities : {  // specify browser name along with other capabilities
                             browserName : 'chrome',
