@@ -56,7 +56,7 @@ module.exports = {
         },
 
         submitAnywayButton: {
-            selector: '//button[text()="submit anyway"]',
+            selector: '//button[text()="Submit anyway"]',
             locateStrategy: 'xpath'
         }
 	},
