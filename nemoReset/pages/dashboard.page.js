@@ -70,13 +70,19 @@ module.exports = {
                 actions.waitForElementVisible(this,this.elements.skillBandContainer.selector,60000);
                 actions.click(this,this.elements.skillDropdown.selector);
                 actions.waitForElementVisible(this,this.elements.dropdownOption1.selector,60000);
+                this.api.pause(1000)
                 actions.click(this,this.elements.dropdownOption1.selector);
                 actions.waitForElementVisible(this,this.elements.bandDropdown.selector,60000);
+                this.api.pause(1000)
                 actions.click(this,this.elements.bandDropdown.selector);
                 actions.waitForElementVisible(this,this.elements.dropdownOption1.selector,60000);
+                this.api.pause(2000)
                 actions.click(this,this.elements.dropdownOption1.selector);
                 actions.waitForElementNotPresent(this,this.elements.disabledStartbutton.selector,60000);
+                this.api.pause(2000)
                 actions.click(this,this.elements.startButton.selector);
+                this.api.pause(30000)
+                actions.waitForElementVisible(this,'#testContainer',60000);
             }         
         }
     ]
