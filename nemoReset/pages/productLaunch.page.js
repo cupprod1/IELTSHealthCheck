@@ -68,7 +68,7 @@ module.exports = {
                     testlog.info("Validating Product Test Container is launched")
                 })
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
+                actions.waitForElementVisible(this,this.elements.testContainer.selector,120000);
                 this.api.useCss();
             },
 
@@ -77,11 +77,11 @@ module.exports = {
                     testlog.info("Validating Metrica Frame is appeared or not")
                 })
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.testContainer.selector,180000);
+                actions.waitForElementVisible(this,this.elements.testContainer.selector,240000);
                 this.api.frame(0)
-                actions.waitForElementVisible(this,this.elements.exitTest.selector,180000);
+                actions.waitForElementVisible(this,this.elements.exitTest.selector,240000);
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,180000);
+                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,240000);
                 this.api.expect.element(this.elements.questionSection.selector).text.to.not.equal("")
                 this.api.frameParent();
             },
