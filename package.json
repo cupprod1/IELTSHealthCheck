@@ -6,7 +6,6 @@
   "dependencies": {
     "bunyan": "1.8.1",
     "bunyan-format": "0.2.1",
-    "csv-cell-editor": "^2.0.0",
     "csv-parser": "^2.3.3",
     "exceljs": "^1.6.2",
     "grunt": "1.0.1",
