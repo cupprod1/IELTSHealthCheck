@@ -1,12 +1,18 @@
 var config = require('./../../config/config.js')
 const csv = require('csv-parser')
-const csvEditor = require('csv-cell-editor')
 const fs = require('fs')
 const results = [];
 var email, rowNumber;
 var flag = false
 var filepath = "testdata_" + testEnv + ".csv"
-
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csvWriter = createCsvWriter({
+  path: filepath,
+  header: [
+    {id: 'email', title: 'email'},
+    {id: 'status', title: 'status'}
+  ]
+});
 
 describe('IELTS - Health Check Test', function() {
   
@@ -32,16 +38,13 @@ describe('IELTS - Health Check Test', function() {
               rowNumber = index + 2
               flag = true
               email = user.email
-              var cellAddressToUpdate = 'B' + rowNumber; 
-              var options = {      
-                fileName: filepath,     //absolute file path        
-                cellAddress: cellAddressToUpdate,              //cellAddress   
-                cellValue: 'true',     //cellValue      
-              };  
-              csvEditor(options);
+              user.status = true
               done();
             }         
           })
+          csvWriter
+                .writeRecords(results)
+                .then(()=> console.log('The CSV file was written successfully'));
         });
       });
   });
