@@ -8,7 +8,7 @@ describe('Setup', function() {
     if (fs.existsSync(filepath)) {
       done();
     } else {
-      fs.appendFile(filepath,"email,status,,,,,,,,,,,,,,,,,,,\n",
+      fs.appendFile(filepath,"email,status\n",
       function(err) {
       if(err) {
         return console.log(err);
@@ -27,7 +27,7 @@ describe('Setup', function() {
 
 
   afterEach(function (browser, done) {
-    fs.appendFile(filepath,username_learner+",false,,,,,,,,,,,,,,,,,,,\n",
+    fs.appendFile(filepath,username_learner+",false\n",
     function(err) {
     if(err) {
     return console.log(err);
