@@ -9,9 +9,10 @@ describe('IELTS - Health Check Test', function() {
     productLaunchPage = browser.page['productLaunch.page']();
     homePage = browser.page['home.page']();
 
+    console.log("Launching URL: " + config[testEnv].loginUrl)
     browser
       .url(config[testEnv].loginUrl, function() {
-        console.log("Launching URL: " + config[testEnv].loginUrl)
+        console.log("URL: " + config[testEnv].loginUrl + " launched successfully")
       })
       .maximizeWindow(function() {
         done();
@@ -26,7 +27,7 @@ describe('IELTS - Health Check Test', function() {
     progressPage.clickReadingTest();
     productLaunchPage.validateMetricaFrameToAppear();
     dashboardPage.logout();
-    browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Logged Out successfully")
+    browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Unable to log out successfully")
   });
 
   after(function (browser, done) {

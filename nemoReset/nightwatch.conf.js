@@ -34,15 +34,15 @@ module.exports = {
                     args: [ 'start-maximized']  }
             } ,
         test_runner : {
-            type : 'mocha',
-            options : {
-                ui : 'bdd',
-                reporter : 'mochawesome',
-                reporterOptions: {
-                    reportName: 'index',
-                    reportDir: 'reports'
-                }
-            }
+            type : 'mocha'
+            // options : {
+            //     ui : 'bdd',
+            //     reporter : 'mochawesome',
+            //     reporterOptions: {
+            //         reportName: 'index',
+            //         reportDir: 'reports'
+            //     }
+            // }
         }
     },
     smokeTestHeadless : {
@@ -62,15 +62,15 @@ module.exports = {
       args: [ 'headless']  }
         } ,
     test_runner : {
-        type : 'mocha',
-        options : {
-            ui : 'bdd',
-            reporter : 'mochawesome',
-            reporterOptions: {
-                reportName: 'index',
-                reportDir: 'reports'
-            }
-        }
+        type : 'mocha'
+        // options : {
+        //     ui : 'bdd',
+        //     reporter : 'mochawesome',
+        //     reporterOptions: {
+        //         reportName: 'index',
+        //         reportDir: 'reports'
+        //     }
+        // }
     }
 },
     saucelabs : {
@@ -94,15 +94,15 @@ module.exports = {
                 "screen-resolution": '1920x1200'
             },
             test_runner : {
-                type : 'mocha',
-                options : {
-                    ui : 'bdd',
-                    reporter : 'mochawesome',
-                    reporterOptions: {
-                        reportName: 'index',
-                        reportDir: 'reports'
-                    }
-                }
+                type : 'mocha'
+                // options : {
+                //     ui : 'bdd',
+                //     reporter : 'mochawesome',
+                //     reporterOptions: {
+                //         reportName: 'index',
+                //         reportDir: 'reports'
+                //     }
+                // }
             }
         }
     }

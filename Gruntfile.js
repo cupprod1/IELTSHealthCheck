@@ -22,15 +22,16 @@ module.exports = function (grunt) {
                 src_folders : ['./nemoReset/specs'], // Update the path based on your application
                 page_objects_path : './nemoReset/pages/',   // path where page object files will be loaded from. Update the path based on your application
                 test_runner : {
-                    type : 'mocha',
-                    options : {
-                        ui : 'bdd',
-                        reporter : 'mochawesome',
-                        reporterOptions: {
-                            reportName: 'index',
-                            reportDir: './reports'
-                        }
-                    }},
+                    type : 'mocha'
+                    // options : {
+                    //     ui : 'bdd',
+                    //     reporter : 'mochawesome',
+                    //     reporterOptions: {
+                    //         reportName: 'index',
+                    //         reportDir: './reports'
+                    //     }
+                    // }
+                },
                 test_settings : {
                     chrome: {selenium_host : '127.0.0.1',
                         selenium_port : 5554,
