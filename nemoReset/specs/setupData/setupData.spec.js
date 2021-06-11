@@ -52,7 +52,7 @@ function registerUser(browser) {
         console.log("Launching URL: " + config[testEnv].loginUrl)
       })
       .maximizeWindow(function() {
-        username_learner = "learner_" + Date.now() + "@yopmail.com";
+        username_learner = "cqaproduser3+" + Date.now() + "@gmail.com";
         console.log(username_learner);
         dashboardPage = browser.page['dashboard.page']();
         productLaunchPage = browser.page['productLaunch.page']();
@@ -61,36 +61,26 @@ function registerUser(browser) {
         userRegisterPageObj.registerAsNewUserNew(username_learner);
         userRegisterPageObj.waitForEmailVerificationScreenToAppear();
         browser.pause(10000);
-        browser.url("http://www.yopmail.com/en/", function() {
+        browser.url("https://mail.google.com/", function() {
           browser
-            .click("td.nw")
-            .setValue("input#login", username_learner)
-            .click("input.sbut")
-            .waitForElementVisible("#inbox", 60000)
-            .frame("ifmail")
+            .pause(2000)
+            .click("input#identifierId")
+            .setValue("input#identifierId", "cqaproduser3@gmail.com")
             .useXpath()
-            .waitForElementVisible('//a[text()="Verify"]', 20000)
-            .click('//a[text()="Verify"]')
+            .click("//span[text()='Next']//parent::button")
+            .pause(2000)
+            .setValue("//input[@name='password']", "Compro11")
+            .click("//span[text()='Next']//parent::button")
+            .pause(10000)
+            .click("//span[text()='Verify your new Cambridge One account']//ancestor::tr[1]")
+            .pause(2000)
+            .click("//a[text()='Verify']")
             .useCss()
-            .frameParent()
             .windowHandles(function(result) {
               var handle = result.value[1];
               browser.switchWindow(handle, function() {
                 dashboardPage.chooseSkillBand()
                 productLaunchPage.validateTestContainerLaunch();
-
-              // browser
-              //   .waitForElementVisible("div.selection-container", 30000)
-              //   .click('div.selection-container a[qid="skill-band-1"]')
-              //   .waitForElementVisible('div.dropdown-menu.show a:nth-child(1)', 30000)
-              //   .click('div.dropdown-menu.show a:nth-child(1)')
-              //   .click('div.selection-container a[qid="skill-band-2"]')
-              //   .waitForElementVisible('div.dropdown-menu.show a:nth-child(1)', 30000)
-              //   .click('div.dropdown-menu.show a:nth-child(1)')
-              //   .waitForElementNotPresent('a.start-test-btn.disabled', 30000)
-              //   .click('a.start-test-btn')
-              //   .waitForElementVisible('#testContainer', 30000)
-
               });
             })
         })
