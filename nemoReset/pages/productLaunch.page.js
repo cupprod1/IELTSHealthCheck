@@ -31,7 +31,7 @@ module.exports = {
 		},
 
         paymentOverlay: {
-            selector: '.payment-overlay'
+            selector: 'div.overlay'
         },
 
         questionStatusIcon: {
