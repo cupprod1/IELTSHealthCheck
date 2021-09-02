@@ -24,9 +24,10 @@ describe('IELTS - Health Check Test', function() {
     homePage = browser.page['home.page']();
     billingInfoPage = browser.page['billingInfo.page']();
 
+    console.log("Launching URL: " + config[testEnv].loginUrl)
     browser
       .url(config[testEnv].loginUrl, function() {
-        console.log("Launching URL: " + config[testEnv].loginUrl)
+        console.log("URL: " + config[testEnv].loginUrl + " launched successfully")
       })
       .maximizeWindow(function() {
         fs.createReadStream(filepath)
@@ -56,7 +57,6 @@ describe('IELTS - Health Check Test', function() {
     dashboardPage.clickProgressTile();
     progressPage.clickReadingTile();
     progressPage.clickReadingTest();
-    productLaunchPage.validateTestContainerLaunch();
     productLaunchPage.validateMetricaFrameToAppear();
     productLaunchPage.moveToLastQuestion();
     productLaunchPage.submitAssignment();

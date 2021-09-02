@@ -77,16 +77,16 @@ module.exports = {
 
         },
         "student": {
-            "email":"cmp_ieltstest1@yopmail.com",
-            "password":"Compro15",
+            "email":"cqaproduser1@gmail.com",
+            "password":"Compro11",
             "currentQuestionCount": "1",
             "totalQuestionCount": "16",
             "answer2Text": "Industrialisation: Bringing luxury to the poor"
         },
 
         "student_scenario2": {
-            "email":"cmp_ieltstest2@yopmail.com",
-            "password":"Compro15"
+            "email":"learner_1601272744008@yopmail.com",
+            "password":"Compro11"
         },
         // Page Completion Timeout
         "timeout": 60000

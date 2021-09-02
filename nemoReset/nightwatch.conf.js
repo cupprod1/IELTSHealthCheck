@@ -19,11 +19,12 @@ module.exports = {
         default : {
             selenium_host : '127.0.0.1',
             selenium_port : 5554,
-            end_session_on_fail: false,
+            end_session_on_fail: true,
             screenshots : {
                 enabled : true,
-                on_failure : false,
-                path : 'screenshots'
+                on_failure : true,
+                on_error : true,
+                path : './screenshots'
             },
             desiredCapabilities : {       // specify browser name along with other capabilities
                 browserName : 'chrome',
@@ -33,15 +34,15 @@ module.exports = {
                     args: [ 'start-maximized']  }
             } ,
         test_runner : {
-            type : 'mocha',
-            options : {
-                ui : 'bdd',
-                reporter : 'mochawesome',
-                reporterOptions: {
-                    reportName: 'index',
-                    reportDir: 'reports'
-                }
-            }
+            type : 'mocha'
+            // options : {
+            //     ui : 'bdd',
+            //     reporter : 'mochawesome',
+            //     reporterOptions: {
+            //         reportName: 'index',
+            //         reportDir: 'reports'
+            //     }
+            // }
         }
     },
     smokeTestHeadless : {
@@ -61,15 +62,15 @@ module.exports = {
       args: [ 'headless']  }
         } ,
     test_runner : {
-        type : 'mocha',
-        options : {
-            ui : 'bdd',
-            reporter : 'mochawesome',
-            reporterOptions: {
-                reportName: 'index',
-                reportDir: 'reports'
-            }
-        }
+        type : 'mocha'
+        // options : {
+        //     ui : 'bdd',
+        //     reporter : 'mochawesome',
+        //     reporterOptions: {
+        //         reportName: 'index',
+        //         reportDir: 'reports'
+        //     }
+        // }
     }
 },
     saucelabs : {
@@ -93,15 +94,15 @@ module.exports = {
                 "screen-resolution": '1920x1200'
             },
             test_runner : {
-                type : 'mocha',
-                options : {
-                    ui : 'bdd',
-                    reporter : 'mochawesome',
-                    reporterOptions: {
-                        reportName: 'index',
-                        reportDir: 'reports'
-                    }
-                }
+                type : 'mocha'
+                // options : {
+                //     ui : 'bdd',
+                //     reporter : 'mochawesome',
+                //     reporterOptions: {
+                //         reportName: 'index',
+                //         reportDir: 'reports'
+                //     }
+                // }
             }
         }
     }

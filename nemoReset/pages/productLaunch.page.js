@@ -1,4 +1,5 @@
 var actions = require("./../lib/browserAction.js");
+require("./../lib/logging.js");
 
 module.exports = {
 	elements: {
@@ -30,7 +31,7 @@ module.exports = {
 		},
 
         paymentOverlay: {
-            selector: '.payment-overlay'
+            selector: 'div.overlay'
         },
 
         questionStatusIcon: {
@@ -55,7 +56,7 @@ module.exports = {
         },
 
         submitAnywayButton: {
-            selector: '//button[text()="submit anyway"]',
+            selector: '//button[text()="Submit anyway"]',
             locateStrategy: 'xpath'
         }
 	},
@@ -63,64 +64,118 @@ module.exports = {
 	commands: [
         {
             validateTestContainerLaunch: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating Product Test Container is launched")
+                })
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
+                this.api.waitForElementVisible(this.elements.testContainer.selector,120000);
                 this.api.useCss();
+                this.api.perform(function() {
+                    testlog.info("Validating Product Test Container is launched")
+                })
             },
 
             validateMetricaFrameToAppear: function(){
                 this.api.useXpath();
-                actions.waitForElementVisible(this,this.elements.testContainer.selector,60000);
+                this.api.perform(function() {
+                    testlog.info("Waiting for Test Container to appear on Assignment Page")
+                })
+                this.api.waitForElementVisible(this.elements.testContainer.selector,240000,"Test Container is not visible on Assignment Page");
+                this.api.perform(function() {
+                    testlog.info("Test Container is visible on Assignment Page")
+                })
                 this.api.frame(0)
-                actions.waitForElementVisible(this,this.elements.exitTest.selector,60000);
+                this.api.perform(function() {
+                    testlog.info("Waiting for Exit Test button to appear inside Metrica Frame on Assignment Page")
+                })
+                this.api.waitForElementVisible(this.elements.exitTest.selector,240000,"Exit Test button is not visible inside Metrica Frame on Assignment Page");
+                this.api.perform(function() {
+                    testlog.info("Exit Test button is visible inside Metrica Frame on Assignment Page")
+                })
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,60000);
+                this.api.perform(function() {
+                    testlog.info("Waiting for Question Count field to appear inside Metrica Frame on Assignment Page")
+                })
+                this.api.waitForElementVisible(this.elements.currentQuestionCount.selector,240000,"Question Count field is not visible inside Metrica Frame on Assignment Page");
+                this.api.perform(function() {
+                    testlog.info("Question Count field is visible inside Metrica Frame on Assignment Page")
+                })
                 this.api.expect.element(this.elements.questionSection.selector).text.to.not.equal("")
                 this.api.frameParent();
             },
 
             validateScoreProgress: function(){
+                this.api.perform(function() {
+                    testlog.info("Validating score progress")
+                })
                 this.api.frame(0)
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.currentQuestionCount.selector,60000);
+                this.api.waitForElementVisible(this.elements.currentQuestionCount.selector,60000);
             	this.api.frameParent();
             },
 
             validatePaymentOverlay: function() {
+                this.api.perform(function() {
+                    testlog.info("Waiting for Payment Overlay to appear on submitted assignment page")
+                })
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.paymentOverlay.selector,60000);
+                this.api.waitForElementVisible(this.elements.paymentOverlay.selector,60000,"Payment Overlay is not visible");
+                this.api.perform(function() {
+                    testlog.info("Payment Overlay is visible on submitted assignment page")
+                })
             },
 
             validateStatusIcon: function() {
+                this.api.perform(function() {
+                    testlog.info("Waiting for Status icon to appear on submitted assignment page")
+                })
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.questionStatusIcon.selector,60000);  
+                this.api.waitForElementVisible(this.elements.questionStatusIcon.selector,60000,"Status icon is not visible on submitted assignment page");
+                this.api.perform(function() {
+                    testlog.info("Status icon is visible on submitted assignment page")
+                })
             },
 
             clickPaymentButton: function() {
+                this.api.perform(function() {
+                    testlog.info("Clicking Payment button")
+                })
                 this.api.useCss();
-                actions.waitForElementVisible(this,this.elements.paymentButton.selector,60000);
-                actions.click(this,this.elements.paymentButton.selector)
+                this.api.waitForElementVisible(this.elements.paymentButton.selector,60000);
+                this.api.click(this.elements.paymentButton.selector)
             },
 
             moveToLastQuestion: function() {
+                this.api.perform(function() {
+                    testlog.info("Moving to Last assignment question")
+                })
                 this.api.useCss();
                 this.api.frame(0)
-                actions.waitForElementVisible(this,this.elements.allQuestions.selector,60000)
-                actions.click(this,this.elements.allQuestions.selector)
-                actions.waitForElementVisible(this,this.elements.lastQuestion.selector,60000)
-                actions.click(this,this.elements.lastQuestion.selector)
+                this.api.waitForElementVisible(this.elements.allQuestions.selector,60000,"All Questions button is not visible inside Metrica Frame on Assignment Launch page")
+                this.api.click(this.elements.allQuestions.selector)
+                this.api.waitForElementVisible(this.elements.lastQuestion.selector,60000,"Last Question button is not visible inside Metrica Frame on Assignment Launch page")
+                this.api.click(this.elements.lastQuestion.selector)
                 this.api.frameParent()
+                this.api.perform(function() {
+                    testlog.info("Moved to Last assignment question successfully")
+                })
             },
 
             submitAssignment: function() {
+                this.api.perform(function() {
+                    testlog.info("Submitting the assignment")
+                })
                 this.api.useXpath();
                 this.api.frame(0)
-                actions.waitForElementVisible(this,this.elements.submitButton.selector,60000)
-                actions.click(this,this.elements.submitButton.selector)
-                actions.waitForElementVisible(this,this.elements.submitAnywayButton.selector,60000)
-                actions.click(this,this.elements.submitAnywayButton.selector)
+                this.api.waitForElementVisible(this.elements.submitButton.selector,60000,"Submit button is not visible inside Metrica Frame on Assignment Launch page")
+                this.api.click(this.elements.submitButton.selector)
+                this.api.waitForElementVisible(this.elements.submitAnywayButton.selector,60000,"Submit Anyway button is not visible inside Metrica Frame on Assignment Launch page")
+                this.api.click(this.elements.submitAnywayButton.selector)
                 this.api.frameParent()
                 this.api.useCss();
+                this.api.perform(function() {
+                    testlog.info("Assignment submitted successfully")
+                })
             }
         }
     ]
