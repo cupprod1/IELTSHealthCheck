@@ -77,8 +77,8 @@ module.exports = {
 
         },
         "student": {
-            "email":"cqaproduser1@gmail.com",
-            "password":"Compro11",
+            "email":"cqastudent5@yopmail.com",
+            "password":"Comprotest11",
             "currentQuestionCount": "1",
             "totalQuestionCount": "16",
             "answer2Text": "Industrialisation: Bringing luxury to the poor"

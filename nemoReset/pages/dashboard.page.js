@@ -3,8 +3,8 @@ require("./../lib/logging.js");
 
 module.exports = {
     elements: {
-        progressTile: {
-            selector: 'a.product-image'
+        privateProgressTile: {
+            selector: 'div.private-space a.product-image'
         },
 
         userProfileName: {
@@ -62,14 +62,14 @@ module.exports = {
                     testlog.info("Waiting for Progress Tile to appear on Dashboard Page")
                 })
                 this.api.useCss();
-                this.api.waitForElementVisible(this.elements.progressTile.selector, 60000, "Progress Tile is not visible on Dashboard Page");
+                this.api.waitForElementVisible(this.elements.privateProgressTile.selector, 60000, "Progress Tile is not visible on Dashboard Page");
                 this.api.perform(function () {
                     testlog.info("Progress Tile is visible on Dashboard Page")
                 })
                 this.api.perform(function () {
                     testlog.info("Clicking Progress Tile on Dashboard Page")
                 })
-                this.api.click(this.elements.progressTile.selector, function (result) {
+                this.api.click(this.elements.privateProgressTile.selector, function (result) {
                     this.assert.equal(result.status, 0, "Progress Tile is not clickable on Dashboard page");
                 })
                 this.api.perform(function () {

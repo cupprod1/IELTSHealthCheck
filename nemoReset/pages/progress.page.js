@@ -8,8 +8,8 @@ module.exports = {
 			locateStrategy: 'xpath'
 		},
 
-		readingTest: {
-			selector: '//div[text()="Reading"]//following::*[contains(@class, "show")][1]',
+		readingTest2: {
+			selector: '//div[text()="Reading"]//following::*[contains(@class, "show")][1]//li[2]',
 			locateStrategy: 'xpath'
 		}
 	},
@@ -28,7 +28,7 @@ module.exports = {
                 this.api.perform(function() {
                     testlog.info("Expanding Reading Tile on Progress Page")
                 })
-                this.api.pause(5000)
+                this.api.pause(15000)
                 this.api.click(this.elements.readingTile.selector, function(result) {
                     this.assert.equal(result.status, 0, "Reading Tile is not clickable on Progress page");
                 })
@@ -43,14 +43,14 @@ module.exports = {
                     testlog.info("Waiting for Reading Test button to appear inside Reading Tile")
                 })
                 this.api.useXpath();
-                this.api.waitForElementVisible(this.elements.readingTest.selector,60000,"Reading Test button is not visible inside Reading Tile");
+                this.api.waitForElementVisible(this.elements.readingTest2.selector,60000,"Reading Test button is not visible inside Reading Tile");
                 this.api.perform(function() {
                     testlog.info("Reading Test button is visible inside Reading Tile")
                 })
                 this.api.perform(function() {
                     testlog.info("Clicking Reading Test button")
                 })
-                this.api.click(this.elements.readingTest.selector, function(result) {
+                this.api.click(this.elements.readingTest2.selector, function(result) {
                     this.assert.equal(result.status, 0, "Reading Test button is not clickable inside Reading Tile");
                 })
                 this.api.perform(function() {
