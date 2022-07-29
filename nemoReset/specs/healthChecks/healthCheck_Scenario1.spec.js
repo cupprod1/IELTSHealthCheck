@@ -27,6 +27,7 @@ describe('IELTS - Health Check Test', function() {
     progressPage.clickReadingTest();
     productLaunchPage.validateMetricaFrameToAppear();
     dashboardPage.logout();
+    console.log(homePage.elements.heading.selector)
     browser.waitForElementVisible(homePage.elements.heading.selector, config[testEnv].timeout, "Unable to log out successfully")
   });
 
