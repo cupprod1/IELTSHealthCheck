@@ -1,7 +1,7 @@
 module.exports = {
 	elements: {
 		heading: {
-			selector: '.home-wrapper h1'
+			selector: '.home-wrapper .price-notify'
 		}
 	}
 }

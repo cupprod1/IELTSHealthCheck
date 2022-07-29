@@ -9,7 +9,7 @@ module.exports = {
 		},
 
 		readingTest2: {
-			selector: '//div[text()="Reading"]//following::*[contains(@class, "show")][1]//li[2]',
+			selector: '//div[text()="Reading"]//following::*[contains(@class, "show")][1]//li//*[contains(text(), "Continue with your test")]',
 			locateStrategy: 'xpath'
 		}
 	},
